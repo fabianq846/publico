@@ -1,0 +1,9 @@
+<h1>Job Offers</h1>
+
+<% @job_offers.each do |offer| %>
+  <h2><%= link_to offer.title, job_offer_path(offer) %></h2>
+  <p><%= offer.description %></p>
+  <% unless current_user.job_offers.include?(offer) %>
+    <%= button_to 'Apply', job_offer_applications_path(offer), method: :post %>
+  <% end %>
+<% end %>

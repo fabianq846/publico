@@ -1,0 +1,7 @@
+<h1><%= @job_offer.title %></h1>
+<p><%= @job_offer.description %></p>
+
+<% if current_user && current_user.email == 'esteban@example.com' %>
+  <%= link_to 'Edit', edit_job_offer_path(@job_offer) %> |
+  <%= link_to 'Delete', @job_offer, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <ul>
+    <li><%= link_to "Inicio", root_path %></li>
+    <li><%= link_to "Usuarios", users_path %></li>
+    <li><%= link_to "Ofertas laborales", job_offers_path %></li>
+    <% if current_user && current_user.email == 'esteban@example.com' %>
+      <li><%= link_to "Crear Usuario", new_user_path %></li>
+      <li><%= link_to "Crear Oferta", new_job_offer_path %></li>
+    <% end %>
+    <% if user_signed_in? %>
+      <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Ingresar", new_user_session_path %></li>
+    <% end %>
+  </ul>
+</nav>
