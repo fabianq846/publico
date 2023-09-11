@@ -1,0 +1,24 @@
+<!-- app/views/users/index.html.erb -->
+
+<h1>Lista de Usuarios</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Nombre</th>
+            <th>Fecha de Creación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.email %></td>
+                <td><%= user.name %></td>
+                <td><%= user.created_at.strftime('%d-%m-%Y %H:%M:%S') %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
