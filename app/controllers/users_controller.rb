@@ -37,10 +37,12 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) # Agrega esta línea para encontrar el usuario primero
     @user.destroy
     redirect_to users_path, notice: 'User was successfully destroyed.'
   end
+  
+  
   
   private
   

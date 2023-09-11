@@ -1,2 +1,2 @@
 <h1><%= @user.name %></h1>
-<%= image_tag @user.photo.variant(resize: "100x100") if @user.photo.attached? %>
+<%= image_tag @user.image.variant(resize: "100x100") if @user.image.attached? %>
