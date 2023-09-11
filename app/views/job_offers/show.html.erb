@@ -5,3 +5,6 @@
   <%= link_to 'Edit', edit_job_offer_path(@job_offer) %> |
   <%= link_to 'Delete', @job_offer, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+<% if user_signed_in? && current_user.email != 'esteban@example.com' %>
+  <%= link_to "Postular", new_job_offer_application_path(job_offer) %>
+<% end %>

@@ -16,11 +16,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to @user, notice: 'Usuario creado exitosamente.'
     else
       render :new
     end
   end
+  
 
   def edit
     @user = User.find(params[:id])
@@ -38,8 +39,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :name, :photo)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
   end
+  
+  
 
   def ensure_esteban
     unless current_user && current_user.email == 'esteban@example.com'

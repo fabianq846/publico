@@ -8,6 +8,6 @@ class User < ApplicationRecord
          has_many :job_offers, through: :applications
          validates :name, presence: true
 
-         has_one_attached :photo
+         has_one_attached :image
 
 end

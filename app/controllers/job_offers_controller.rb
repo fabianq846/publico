@@ -9,6 +9,10 @@ class JobOffersController < ApplicationController
   def show
     @job_offer = JobOffer.find(params[:id])
   end
+  
+  def edit
+    @job_offer = Job_offer.edit
+  end
 
   def new
     @job_offer = JobOffer.new
