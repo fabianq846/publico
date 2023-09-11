@@ -8,7 +8,8 @@
       <li><%= link_to "Crear Oferta", new_job_offer_path %></li>
     <% end %>
     <% if user_signed_in? %>
-      <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "Salir", destroy_user_session_path %></li>
+
     <% else %>
       <li><%= link_to "Ingresar", new_user_session_path %></li>
     <% end %>
