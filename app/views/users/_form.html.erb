@@ -1,0 +1,9 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <!-- Tus campos aquí, por ejemplo: -->
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  
+  <!-- Continúa con los otros campos ... -->
+
+  <%= form.submit %>
+<% end %>

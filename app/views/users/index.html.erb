@@ -1,6 +1,11 @@
 <!-- app/views/users/index.html.erb -->
 
 <h1>Lista de Usuarios</h1>
+<% @users.each do |user| %>
+  <p>
+    <%= user.name %> | <%= link_to 'Edit', edit_user_path(user) %> | <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
 
 <table>
     <thead>
