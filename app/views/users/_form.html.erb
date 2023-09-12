@@ -1,9 +1,29 @@
+<% if user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with(model: user, local: true) do |form| %>
-  <!-- Tus campos aquí, por ejemplo: -->
   <%= form.label :name %>
   <%= form.text_field :name %>
-  
-  <!-- Continúa con los otros campos ... -->
+
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %>
+
+  <%= form.label :image %>
+  <%= form.file_field :image %>
 
   <%= form.submit %>
 <% end %>
