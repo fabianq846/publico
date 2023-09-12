@@ -6,6 +6,7 @@ gem 'devise'
 gem 'figaro'
 gem 'faker'
 gem 'aws-sdk-s3'  # para S3
+gem 'image_processing', '~> 1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.7", ">= 7.0.7.2"
